@@ -7,8 +7,21 @@ services:
       - ./app:/var/www/html
     ports:
       - 8000:8000
+    depends_on:
+      migrator:
+        condition: service_completed_successfully
 
   php-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      migrator:
+        condition: service_completed_successfully
+
+  migrator:
     build:
       context: .
       dockerfile: Dockerfile
@@ -20,9 +33,10 @@ services:
         sleep 10 &&
         echo 'Worker ensuring database migrations are applied...' &&
         bin/console doctrine:migrations:migrate --no-interaction &&
-        echo 'Starting messenger worker...' &&
-        bin/console messenger:consume async_priority_high
+        echo 'Migrations complete.'
       "
+    depends_on:
+      - mysql
 
   mysql:
     image: mysql:8.0
