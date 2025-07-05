@@ -1,0 +1,73 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/var/www/html
+    ports:
+      - 8000:8000
+
+  php-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/var/www/html
+    command: >
+      sh -c "
+        echo 'Waiting for services to be ready...' &&
+        sleep 10 &&
+        echo 'Worker ensuring database migrations are applied...' &&
+        bin/console doctrine:migrations:migrate --no-interaction &&
+        echo 'Starting messenger worker...' &&
+        bin/console messenger:consume async_priority_high
+      "
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: symfony_api_db
+      MYSQL_USER: symfony_user
+      MYSQL_PASSWORD: symfony_password
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  mock-api-one:
+    image: node:20-alpine
+    working_dir: /data
+    volumes:
+      - ./mock-api-data/db-one.json:/data/db.json
+    command: >
+      sh -c "npm install -g json-server &&
+        json-server --watch db.json --host 0.0.0.0 --port 3000"
+    ports:
+      - 3001:3000
+
+  mock-api-two:
+    image: node:20-alpine
+    working_dir: /data
+    volumes:
+      - ./mock-api-data/db-two.json:/data/db.json
+    command: >
+      sh -c "npm install -g json-server &&
+        json-server --watch db.json --host 0.0.0.0 --port 3000"
+    ports:
+     - 3002:3000
+
+  mock-api-three:
+    image: node:20-alpine
+    working_dir: /data
+    volumes:
+      - ./mock-api-data/db-three.json:/data/db.json
+    command: >
+      sh -c "npm install -g json-server &&
+        json-server --watch db.json --host 0.0.0.0 --port 3000"
+    ports:
+      - 3003:3000
+
+volumes:
+  db_data:

@@ -1,0 +1,141 @@
+{
+  "marketAnalysis": {
+    "meta": {
+      "requestId": "a4b1c2d3-e4f5-4a6b-8c7d-0e1f2a3b4c5d",
+      "timestamp": "2025-07-04T00:41:41Z",
+      "source": "MarketInsightEngine-v3.1"
+    },
+    "data": {
+      "101": {
+        "supplyChain": {
+          "distributors": [
+            {
+              "distributorName": "Global Electronics",
+              "tier": "A",
+              "offers": [
+                { "unitCost": 498.99, "stockLevel": 210 },
+                { "unitCost": 497.50, "stockLevel": 45 }
+              ]
+            }
+          ]
+        }
+      },
+      "102": {
+        "supplyChain": {
+          "distributors": [
+            {
+              "distributorName": "ConnectAll Inc.",
+              "tier": "B",
+              "offers": [
+                { "unitCost": 26.10, "stockLevel": 5500 }
+              ]
+            }
+          ]
+        }
+      },
+      "103": {
+        "supplyChain": {
+          "distributors": [
+            {
+              "distributorName": "Global Electronics",
+              "tier": "A",
+              "offers": [
+                { "unitCost": 121.00, "stockLevel": 85 }
+              ]
+            },
+            {
+              "distributorName": "Office Outfitters",
+              "tier": "C",
+              "offers": [
+                { "unitCost": 119.50, "stockLevel": 140 }
+              ]
+            }
+          ]
+        }
+      },
+      "104": {
+        "supplyChain": {
+          "distributors": []
+        }
+      },
+      "105": {
+        "supplyChain": {
+          "distributors": [
+            {
+              "distributorName": "ConnectAll Inc.",
+              "tier": "B",
+              "offers": [
+                { "unitCost": 15.25, "stockLevel": 12000 }
+              ]
+            },
+            {
+              "distributorName": "Office Outfitters",
+              "tier": "C",
+              "offers": [
+                { "unitCost": 14.90, "stockLevel": 2100 }
+              ]
+            }
+          ]
+        }
+      },
+      "106": {
+        "supplyChain": {
+          "distributors": [
+            {
+              "distributorName": "Global Electronics",
+              "tier": "A",
+              "offers": [
+                { "unitCost": 352.00, "stockLevel": 42 }
+              ]
+            }
+          ]
+        }
+      },
+      "107": {
+        "supplyChain": {
+          "distributors": [
+            {
+              "distributorName": "Office Outfitters",
+              "tier": "C",
+              "offers": [
+                { "unitCost": 75.20, "stockLevel": 410 },
+                { "unitCost": 74.95, "stockLevel": 800 }
+              ]
+            }
+          ]
+        }
+      },
+      "108": {
+        "supplyChain": {
+          "distributors": [
+            {
+              "distributorName": "Global Electronics",
+              "tier": "A",
+              "offers": [
+                { "unitCost": 602.50, "stockLevel": 18 }
+              ]
+            }
+          ]
+        }
+      },
+      "109": {
+        "supplyChain": {
+          "distributors": [
+            {
+              "distributorName": "ConnectAll Inc.",
+              "tier": "B",
+              "offers": [
+                { "unitCost": 46.99, "stockLevel": 850 }
+              ]
+            }
+          ]
+        }
+      },
+      "110": {
+        "supplyChain": {
+          "distributors": []
+        }
+      }
+    }
+  }
+}

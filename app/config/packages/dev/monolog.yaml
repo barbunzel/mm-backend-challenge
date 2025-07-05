@@ -1,0 +1,14 @@
+monolog:
+  channels: ["app"]
+  handlers:
+    app:
+      type: stream
+      path: "php://stderr"
+      level: info
+      channels: ["app"]
+
+    default:
+      type: stream
+      path: "php://stderr"
+      level: warning
+      channels: ["!app"]

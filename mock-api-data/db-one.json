@@ -1,0 +1,79 @@
+{
+  "products": [
+    {
+      "product_id": "101",
+      "prices": [
+        { "vendor": "TechSupplyCo", "price": 499.99 },
+        { "vendor": "GadgetGalaxy", "price": 495.50 },
+        { "vendor": "ElectroMart", "price": 505.00 }
+      ]
+    },
+    {
+      "product_id": "102",
+      "prices": [
+        { "vendor": "GadgetGalaxy", "price": 24.95 },
+        { "vendor": "DigitalDreams", "price": 25.99 }
+      ]
+    },
+    {
+      "product_id": "103",
+      "prices": [
+        { "vendor": "OfficeWonders", "price": 120.00 },
+        { "vendor": "TechSupplyCo", "price": 118.75 },
+        { "vendor": "ElectroMart", "price": 122.99 },
+        { "vendor": "DigitalDreams", "price": 119.99 }
+      ]
+    },
+    {
+      "product_id": "104",
+      "prices": [
+        { "vendor": "GadgetGalaxy", "price": 89.99 },
+        { "vendor": "DigitalDreams", "price": 92.50 }
+      ]
+    },
+    {
+      "product_id": "105",
+      "prices": [
+        { "vendor": "TechSupplyCo", "price": 15.00 },
+        { "vendor": "OfficeWonders", "price": 14.95 }
+      ]
+    },
+    {
+      "product_id": "106",
+      "prices": [
+        { "vendor": "ElectroMart", "price": 350.00 },
+        { "vendor": "TechSupplyCo", "price": 345.99 },
+        { "vendor": "GadgetGalaxy", "price": 355.50 }
+      ]
+    },
+    {
+      "product_id": "107",
+      "prices": [
+        { "vendor": "DigitalDreams", "price": 75.50 },
+        { "vendor": "OfficeWonders", "price": 74.99 },
+        { "vendor": "ElectroMart", "price": 76.00 }
+      ]
+    },
+    {
+      "product_id": "108",
+      "prices": [
+        { "vendor": "TechSupplyCo", "price": 600.00 },
+        { "vendor": "ElectroMart", "price": 599.99 }
+      ]
+    },
+    {
+      "product_id": "109",
+      "prices": [
+        { "vendor": "GadgetGalaxy", "price": 45.99 }
+      ]
+    },
+    {
+      "product_id": "110",
+      "prices": [
+        { "vendor": "OfficeWonders", "price": 220.00 },
+        { "vendor": "DigitalDreams", "price": 218.50 },
+        { "vendor": "TechSupplyCo", "price": 225.00 }
+      ]
+    }
+  ]
+}
