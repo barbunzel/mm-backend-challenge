@@ -17,6 +17,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./app:/var/www/html
+    command: ["bin/console", "messenger:consume", "async_priority_high"]
     depends_on:
       migrator:
         condition: service_completed_successfully

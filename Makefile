@@ -14,11 +14,11 @@ help:
 	@echo "  setup     - A single command to build, start, install dependencies, and run migrations."
 	@echo ""
 	@echo "Application Commands:"
-	@echo "  migrate      - Run database migrations."
-	@echo "  fetch        - Dispatch the main price fetching job to the queue."
-	@echo "  test         - Run the PHPUnit test suite."
-	@echo "  shell        - Access the shell (bash) of the PHP container."
-	@echo "  worker-logs  - Tail the logs for the background PHP worker."
+	@echo "  migrate   - Run database migrations."
+	@echo "  fetch     - Dispatch the main price fetching job to the queue."
+	@echo "  test      - Run the PHPUnit test suite."
+	@echo "  shell     - Access the shell (bash) of the PHP container."
+	@echo "  logs      - Tail the logs for ALL running services."
 	@echo ""
 	@echo "Dead Letter Queue Management:"
 	@echo "  failed-queue     - List all messages in the failed queue."
@@ -57,9 +57,9 @@ fetch:
 	@echo "Fetching prices from all sources..."
 	docker compose exec $(PHP_SERVICE) bin/console prices:fetch
 
-worker-logs:
+logs:
 	@echo "Tailling logs for the PHP worker..."
-	docker compose logs -f $(PHP_WORKER_SERVICE)
+	docker compose logs -f
 
 test:
 	@echo "Running the test suite..."
