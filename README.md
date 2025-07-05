@@ -26,7 +26,7 @@ make fetch
 
 ### Price Endpoints
 
-All API endpoints are protected. You'll require a valid API key to be sent in the X-API-KEY header per request.
+All API endpoints are protected. You'll require a valid API key to be sent in the `X-API-KEY` header per request.
 
 #### Authentication
 
