@@ -25,7 +25,7 @@ final class SaveLowestPriceHandler
             $this->appLogger->info('Price for product {productId} saved to the database.', [
                 'productId' => $priceDto->productId,
             ]);
-        } catch ($error) {
+        } catch (\Throwable $error) {
             $this->appLogger->error('Failed to save price for product {productId}.', [
                 'productId' => $priceDto->productId,
                 'error' => $error->getMessage(),
