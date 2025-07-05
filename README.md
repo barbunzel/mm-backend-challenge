@@ -107,6 +107,10 @@ The Symfony application lives in the `app` directory.
 
 #### Considerations
 
+##### Error Handling
+
+For the scope of the task, I chose not to have robust error handling, just some basic handling for the main functionality.
+
 ##### Batch Processing
 
 Even though I'm choosing to do the price fetching in batches that will fail if one of them fails, with the overall architecture, this can still be easily adapted to process only successful fetches and get the prices.

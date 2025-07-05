@@ -18,7 +18,9 @@ class LowestPriceFinder
             return $pricesByProduct;
         }, []);
 
-        $lowestPrices = array_map([$this, 'findLowestPrice'], $pricesByProduct);
+        $validPricesByProduct = array_filter($pricesByProduct);
+
+        $lowestPrices = array_map([$this, 'findLowestPrice'], $validPricesByProduct);
 
         return $lowestPrices;
     }

@@ -19,10 +19,20 @@ final class SaveLowestPriceHandler
     {
         $priceDto = $message->getPriceDto();
 
-        $this->saver->save($priceDto);
+        try {
+            $this->saver->save($priceDto);
 
-        $this->appLogger->info('Price for product {productId} saved to the database.', [
-            'productId' => $priceDto->productId,
-        ]);
+            $this->appLogger->info('Price for product {productId} saved to the database.', [
+                'productId' => $priceDto->productId,
+            ]);
+        } catch ($error) {
+            $this->appLogger->error('Failed to save price for product {productId}.', [
+                'productId' => $priceDto->productId,
+                'error' => $error->getMessage(),
+                'trace' => $error->getTraceAsString(),
+            ]);
+
+            throw $error;
+        }
     }
 }
