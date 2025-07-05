@@ -43,7 +43,7 @@ This will output a new API key. Copy this key for use in every request.
 Retrieve a list of all lowest prices by running the following command, replacing `<YOUR_API_KEY>` with the key you copied in the previous steps.
 
 ```bash
-curl 'http://localhost:8000/api/prices/' --header 'X-API-KEY: <YOUR_API_KEY>'
+curl http://localhost:8000/api/prices/ --header 'X-API-KEY: <YOUR_API_KEY>'
 ```
 
 #### Get Price By ID
@@ -51,7 +51,7 @@ curl 'http://localhost:8000/api/prices/' --header 'X-API-KEY: <YOUR_API_KEY>'
 Retrieve a the lowest price of a specific product by running the following command, replacing `<YOUR_API_KEY>` with the key you copied in the previous steps and `<PRODUCT_ID>` with the desired Product ID.
 
 ```bash
-curl 'http://localhost:8000/api/prices/<PRODUCT_ID>' --header 'X-API-KEY: <YOUR_API_KEY>'
+curl http://localhost:8000/api/prices/<PRODUCT_ID> --header 'X-API-KEY: <YOUR_API_KEY>'
 ```
 
 ### Tests
