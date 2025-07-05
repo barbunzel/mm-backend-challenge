@@ -24,6 +24,36 @@ make setup
 make fetch
 ```
 
+### Price Endpoints
+
+All API endpoints are protected. You'll require a valid API key to be sent in the X-API-KEY header per request.
+
+#### Authentication
+
+Generate an API key. Run the following command, replacing `<YOUR_EMAIL>` with an email address:
+
+```bash
+make create-user EMAIL=<YOUR_EMAIL>
+```
+
+This will output a new API key. Copy this key for use in every request.
+
+#### Get All Prices
+
+Retrieve a list of all lowest prices by running the following command, replacing `<YOUR_API_KEY>` with the key you copied in the previous steps.
+
+```bash
+curl 'http://localhost:8000/api/prices/' --header 'X-API-KEY: <YOUR_API_KEY>'
+```
+
+#### Get Price By ID
+
+Retrieve a the lowest price of a specific product by running the following command, replacing `<YOUR_API_KEY>` with the key you copied in the previous steps and `<PRODUCT_ID>` with the desired Product ID.
+
+```bash
+curl 'http://localhost:8000/api/prices/<PRODUCT_ID>' --header 'X-API-KEY: <YOUR_API_KEY>'
+```
+
 ### Tests
 
 ```bash
@@ -103,6 +133,9 @@ The Symfony application lives in the `app` directory.
 - `src/PriceFinder` contains the logic for finding the lowest price from the aggregated price information from APIs
 - `src/PriceSaver` contains the logic responsible of persisting data into the database
 - `src/Entity` contains the Doctrine entities
+- `src/Controller` contains the logic of the pricing routes
+- `src/EventListener` contains a listener to process uncaught exceptions
+- `src/Security` contains the logic for authenticating API requests
 - `tests/` contains all unit and integration tests
 
 #### Considerations

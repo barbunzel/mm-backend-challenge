@@ -14,11 +14,15 @@ help:
 	@echo "  setup     - A single command to build, start, install dependencies, and run migrations."
 	@echo ""
 	@echo "Application Commands:"
-	@echo "  migrate   - Run database migrations."
 	@echo "  fetch     - Dispatch the main price fetching job to the queue."
 	@echo "  test      - Run the PHPUnit test suite."
 	@echo "  shell     - Access the shell (bash) of the PHP container."
 	@echo "  logs      - Tail the logs for ALL running services."
+	@echo ""
+	@echo "Database & User Management:"
+	@echo "  migrate          - Run database migrations."
+	@echo "  migration-diff   - Generate a new migration file based on entity changes."
+	@echo "  create-user      - Creates a new user. Usage: make create-user EMAIL=<email@address.com>"
 	@echo ""
 	@echo "Dead Letter Queue Management:"
 	@echo "  failed-queue     - List all messages in the failed queue."
@@ -80,3 +84,7 @@ retry-message:
 remove-message:
 	@echo "Removing failed message with ID: $$ID..."
 	docker compose exec $(PHP_SERVICE) bin/console messenger:failed:remove $$ID
+
+create-user:
+	@echo "Creating a new user with email: $$EMAIL..."
+	docker compose exec $(PHP_SERVICE) bin/console api:create-user $$EMAIL
